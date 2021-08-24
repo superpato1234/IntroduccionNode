@@ -1,27 +1,20 @@
-const imprimir = (name) => {
-    console.log("Hola a todos soy "+name);
-}
-
-const callback= (nombre,funcion)=>{
-    funcion(nombre);
-}
-
-callback("Pablo", imprimir)
-
-/* 
-setInterval(() => {
-    callback("J. Cole", imprimir)
-}, 500);
- */
 
 
-const temporizador = (limit) => {
-    for(let x=0; x<limit;x++){
-        setTimeout(()=>{
-            console.log("Paso un segundo");
-        },1000)
+const getUserById= (id,callback) =>{
+
+    const user={
+        id,
+        name:'fernando',
     }
-    console.log("Termino")
+
+    setTimeout(()=>{
+        callback(user)
+    },1500)
+
 }
 
-temporizador(5)
+
+getUserById(10,(user)=>{
+    console.log(user.id);
+    console.log(user.name);
+})
